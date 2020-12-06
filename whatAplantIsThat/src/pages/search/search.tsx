@@ -1,27 +1,21 @@
 import React from 'react';
-import { View, Text, Image, ImageBackground , Dimensions} from 'react-native';
-import {Title, BackgroundContainer, FavoriteContainer, StarIcon} from './style';
-
-
-import starIcon from '../../assets/images/emptyStar.png';
-
-const { width, height } = Dimensions.get('window');
+import { MainContainer, Title, BackgroundContainer, ContentContainer } from './style';
+import Favorites from '../../components/FavoritesIcon';
+import SearchBar from '../../components/SearchBar/';
 
 function SearchPage() {
     return(
-        <View style={{flex:1, backgroundColor: 'blue'}}>
-            <BackgroundContainer />
-                {/* <FavoriteContainer>
-                    <StarIcon source={starIcon}/>
-                </FavoriteContainer> */}
-                {/* <View>
+        <MainContainer>
+            <BackgroundContainer> 
+                <Favorites />
+                <ContentContainer>
                     <Title>What a Plant is That?</Title>
-                    <Text>COMPONENTE - BARRA DE PESQUISA</Text>
-                    <Text>COMPONENTE - PROCURA POR IMAGEM</Text>
-                </View> */}
-            {/* </BackgroundContainer> */}
-        </View>
+                    <SearchBar />
+                </ContentContainer>
+                {/* <PicSearcher /> */}
+            </BackgroundContainer>
+        </MainContainer>
     )
-};
+}
 
 export default SearchPage;
