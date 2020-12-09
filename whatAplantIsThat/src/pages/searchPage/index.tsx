@@ -1,17 +1,18 @@
 import React from 'react';
-import { MainContainer, Title, BackgroundContainer, ContentContainer } from './style';
-import Favorites from '../../components/FavoritesIcon';
-import SearchBar from '../../components/SearchBar/';
+import { MainContainer, Title, BackgroundContainer, TitleAndSearcheContainer } from './style';
+import Favorites from '../../components/FavoritesIconBox';
+import SearchBar from '../../components/SearchBar';
+
 
 function SearchPage() {
     return(
         <MainContainer>
             <BackgroundContainer> 
                 <Favorites />
-                <ContentContainer>
+                <TitleAndSearcheContainer>
                     <Title>What a Plant is That?</Title>
                     <SearchBar />
-                </ContentContainer>
+                </TitleAndSearcheContainer>
                 {/* <PicSearcher /> */}
             </BackgroundContainer>
         </MainContainer>

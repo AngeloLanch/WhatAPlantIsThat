@@ -1,8 +1,10 @@
 import styled from 'styled-components/native';
-import starIcon from '../../assets/images/emptyStar.png'
+import starIcon from '../../assets/images/filledStar.png'
 
 export const FavoriteContainer = styled.View`
-    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    right: 65%;
     background-color: rgba(255, 255, 255, 0.4);
     border: 2px solid #ABAC64;
     border-top-width: 0;
@@ -11,8 +13,7 @@ export const FavoriteContainer = styled.View`
     border-top-right-radius: 0;
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
-    padding: 2px 5px 5px;
-    height: auto;
+    padding: 2px 8px 6px;
     justify-content: flex-start;
 `;
 

@@ -1,13 +1,14 @@
 import React from 'react';
-import {SafeAreaView, View, Text} from 'react-native';
-import SearchPage from './pages/search/search';
+import {SafeAreaView} from 'react-native';
+import MyRoutes from './routes';
+import SearchPage from './pages/searchPage';
+import PlantListPage from './pages/plantListPage';
 
-function App() {
-    return (
-        <SafeAreaView>
-            <SearchPage />
-        </SafeAreaView>
+const App = () => {
+    return(
+        <MyRoutes />
     )
-}
+};
+
 
 export default App

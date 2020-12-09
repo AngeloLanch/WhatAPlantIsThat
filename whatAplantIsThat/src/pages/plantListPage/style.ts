@@ -17,19 +17,16 @@ export const BackgroundContainer = styled.ImageBackground.attrs({
 })`
     height: ${height}px;
     width: ${width}px;
+    justify-content: center;
+`;
+
+export const PlantListContainer = styled.View`
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid #ABAC64;
+    border-radius: 10px;
+    margin: 0 auto;
 `;
 
 export const ContentContainer = styled.View`
-    height: ${height - 37}px; /* 37px is the favorite component height */
-    justify-content: center;
-    transform: translateY(-80px);
-`;
 
-export const Title = styled.Text`
-    font-size: 35px;
-    max-width: 200px;
-    text-align: center;
-    margin: 0 auto;
-    color: #F6841B;
-    /* font-family: NerkoOne; */
 `;

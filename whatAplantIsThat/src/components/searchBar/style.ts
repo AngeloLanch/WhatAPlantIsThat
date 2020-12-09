@@ -3,11 +3,10 @@ import CameraIcon from '../../assets/images/camera2x.png';
 import SearchIcon from '../../assets/images/search2x.png';
 
 export const SearchBarContainer = styled.View`
-    margin-top: 25px;
-    padding: 0 20px;
+    padding: 0 12px;
     flex-direction: row;
-    flex-wrap: nowrap;
-    height: 45px;
+    max-height: 45px;
+    flex: 1;
 `;
 
 export const TextContainer = styled.View`
@@ -38,10 +37,9 @@ export const IconsContainer = styled.View`
     border-style: solid;
     border-color: #ABAC64;
     flex-direction: row;
-    flex-wrap: nowrap;
 `;
 
-export const TouchableIcon = styled.View`
+export const TouchableIcon = styled.TouchableOpacity`
     justify-content: center;
     border-left-width: 2px;
     border-style: solid;
