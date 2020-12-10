@@ -1,6 +1,6 @@
 import React from 'react';
 import { MainContainer, Title, BackgroundContainer, TitleAndSearcheContainer } from './style';
-import Favorites from '../../components/FavoritesIconBox';
+import Favorites from '../../components/FavoritesIconContainer';
 import SearchBar from '../../components/SearchBar';
 
 

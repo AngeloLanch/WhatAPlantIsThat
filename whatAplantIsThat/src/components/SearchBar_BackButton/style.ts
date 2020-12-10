@@ -4,6 +4,7 @@ import BackIcon from '../../assets/images/backIcon.png'
 export const SearchBar_BackButtonContainer = styled.View`
     flex-direction: row;
     align-items: center;
+    margin-bottom: 20px;
 `;
 
 export const BackButtonContainer = styled.TouchableOpacity`

@@ -1,9 +1,9 @@
 import React from 'react';
 import { View } from 'react-native';
-import Favorites from '../../components/FavoritesIconBox';
+import Favorites from '../../components/FavoritesIconContainer';
 import PlantCard from '../../components/PlantCard';
 import SearchBar_BackButtonContainer from '../../components/SearchBar_BackButton';
-import { MainContainer, BackgroundContainer, PlantListContainer, ContentContainer} from './style';
+import { MainContainer, BackgroundContainer, PlantListFrame, PlantListContainer, ContentContainer} from './style';
 
 
 function PlantListPage() {
@@ -13,9 +13,16 @@ function PlantListPage() {
                 <Favorites />
                 <ContentContainer>
                     <SearchBar_BackButtonContainer />
-                    <PlantListContainer>
-                        <PlantCard />
-                    </PlantListContainer>
+                    <PlantListFrame>
+                        <PlantListContainer>
+                            <PlantCard />
+                            <PlantCard />
+                            <PlantCard />
+                            <PlantCard />
+                            <PlantCard />
+                            <PlantCard />
+                        </PlantListContainer>                                
+                    </PlantListFrame>
                 </ContentContainer>
             </BackgroundContainer>
         </MainContainer>
