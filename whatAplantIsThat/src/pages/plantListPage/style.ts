@@ -21,20 +21,19 @@ export const BackgroundContainer = styled.ImageBackground.attrs({
 `;
 
 export const ContentContainer = styled.View`
-    height: ${height - 200}px;
-    overflow: hidden;
-    justify-content: flex-start;
-    /* height: 100%; */
-    /* justify-self: baseline; */
+    top: 15%;
+    flex: 1;
 `;
 
 export const PlantListFrame = styled.View`
-    background-color: rgba(171,172,100, 0.3);
+    background-color: rgba(255, 255, 255, 0.6);
     padding:  5px 20px 15px 15px;
     border: 1px solid #ABAC64;
     border-radius: 10px;
-    margin: 0 auto;
-    flex: 1;
+    margin: 0 12px;
+    margin-bottom: 10px;
+    height: ${height - 212}px;
+    overflow: hidden;
 `;
 
 export const PlantListContainer = styled.ScrollView`

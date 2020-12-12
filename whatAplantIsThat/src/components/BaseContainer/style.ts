@@ -19,18 +19,3 @@ export const BackgroundContainer = styled.ImageBackground.attrs({
     width: ${width}px;
     justify-content: center;
 `;
-
-export const TitleAndSearcheContainer = styled.View`
-    height: 250px;
-    justify-content: center;
-    transform: translateY(-30px);
-`;
-
-export const Title = styled.Text`
-    font-size: 50px;
-    max-width: 300px;
-    text-align: center;
-    margin: 0 auto 15px;
-    color: #F6841B;
-    font-family: 'NerkoOne-Regular';
-`;
