@@ -27,7 +27,7 @@ export const ContentContainer = styled.View`
 
 export const PlantListFrame = styled.View`
     background-color: rgba(255, 255, 255, 0.6);
-    padding:  5px 20px 15px 15px;
+    padding:  5px 10px 15px 15px;
     border: 1px solid #ABAC64;
     border-radius: 10px;
     margin: 0 12px;
@@ -37,4 +37,5 @@ export const PlantListFrame = styled.View`
 `;
 
 export const PlantListContainer = styled.ScrollView`
+    padding-right: 10px;
 `;

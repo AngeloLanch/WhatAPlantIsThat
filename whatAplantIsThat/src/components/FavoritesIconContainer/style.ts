@@ -2,9 +2,10 @@ import styled from 'styled-components/native';
 import starIcon from '../../assets/images/filledStar.png'
 
 export const FavoriteContainer = styled.View`
+    align-self: flex-start;
     position: absolute;
     top: 0;
-    right: 65%;
+    left: 25%;
     background-color: rgba(255, 255, 255, 0.4);
     border: 2px solid #ABAC64;
     border-top-width: 0;
@@ -14,7 +15,6 @@ export const FavoriteContainer = styled.View`
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
     padding: 2px 8px 6px;
-    justify-content: flex-start;
 `;
 
 export const StarIcon = styled.Image.attrs({source: starIcon, resizeMode: 'stretch'})`

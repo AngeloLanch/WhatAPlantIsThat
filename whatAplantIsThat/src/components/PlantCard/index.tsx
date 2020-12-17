@@ -1,11 +1,14 @@
 import React from 'react';
-import { Image, Text, View } from 'react-native';
-import { LeefImage, LeefImageContainer, LeefInfos, LeefInfosContainer, PlantCardInnerContainer, PlantCardOutterContainer } from './style';
+import { LeefImage, LeefImageContainer, 
+    LeefInfos, LeefInfosContainer, 
+    PlantCardInnerContainer, PlantCardOutterContainer, 
+    FavIcon } from './style';
 
 function PlantCard() {
     return (
         <PlantCardOutterContainer>
             <PlantCardInnerContainer>
+                <FavIcon />
                 <LeefImageContainer>
                     <LeefImage />
                 </LeefImageContainer>

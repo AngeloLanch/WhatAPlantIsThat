@@ -1,9 +1,10 @@
 import React from 'react';
-import { View } from 'react-native';
 import Favorites from '../../components/FavoritesIconContainer';
 import PlantCard from '../../components/PlantCard';
 import SearchBar_BackButtonContainer from '../../components/SearchBar_BackButton';
-import { MainContainer, BackgroundContainer, PlantListFrame, PlantListContainer, ContentContainer} from './style';
+import { MainContainer, BackgroundContainer, 
+    PlantListFrame, PlantListContainer, 
+    ContentContainer} from './style';
 
 
 function PlantListPage() {
