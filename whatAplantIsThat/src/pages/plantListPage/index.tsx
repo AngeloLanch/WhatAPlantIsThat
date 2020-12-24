@@ -4,7 +4,7 @@ import PlantCard from '../../components/PlantCard';
 import SearchBar_BackButtonContainer from '../../components/SearchBar_BackButton';
 import { MainContainer, BackgroundContainer, 
     PlantListFrame, PlantListContainer, 
-    ContentContainer} from './style';
+    ContentContainer } from './style';
 
 
 function PlantListPage() {
@@ -16,7 +16,6 @@ function PlantListPage() {
                     <SearchBar_BackButtonContainer />
                     <PlantListFrame>
                         <PlantListContainer>
-                            <PlantCard />
                             <PlantCard />
                             <PlantCard />
                             <PlantCard />

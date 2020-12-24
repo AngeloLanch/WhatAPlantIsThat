@@ -5,7 +5,7 @@ export const FavoriteContainer = styled.View`
     align-self: flex-start;
     position: absolute;
     top: 0;
-    left: 25%;
+    left: 20%;
     background-color: rgba(255, 255, 255, 0.4);
     border: 2px solid #ABAC64;
     border-top-width: 0;

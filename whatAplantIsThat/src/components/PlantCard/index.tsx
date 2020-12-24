@@ -1,6 +1,6 @@
 import React from 'react';
-import { LeefImage, LeefImageContainer, 
-    LeefInfos, LeefInfosContainer, 
+import { LeafImage, LeafImageContainer, 
+    LeafInfos, LeafInfosContainer, 
     PlantCardInnerContainer, PlantCardOutterContainer, 
     FavIcon } from './style';
 
@@ -9,17 +9,17 @@ function PlantCard() {
         <PlantCardOutterContainer>
             <PlantCardInnerContainer>
                 <FavIcon />
-                <LeefImageContainer>
-                    <LeefImage />
-                </LeefImageContainer>
-                <LeefInfosContainer>
-                    <LeefInfos>
+                <LeafImageContainer>
+                    <LeafImage />
+                </LeafImageContainer>
+                <LeafInfosContainer>
+                    <LeafInfos>
                         Essa planta é uma planta muito louca, 
                         ela é mágica, e vai fazer trazer a tona 
                         tudo que há de haver dentro de você. 
                         Aproveite com sabedoria.
-                    </LeefInfos>
-                </LeefInfosContainer>
+                    </LeafInfos>
+                </LeafInfosContainer>
             </PlantCardInnerContainer>
         </PlantCardOutterContainer>
     )
