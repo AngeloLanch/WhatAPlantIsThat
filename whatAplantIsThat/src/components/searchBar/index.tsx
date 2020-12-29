@@ -1,29 +1,23 @@
 import React, { useState } from 'react';
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker/src';
 
 import { SearchBarContainer, TextContainer, TextArea, 
     TouchableIcon, IconsContainer, CameraImage, SearchImage } 
     from './style';
 
+import ImagePicker from 'react-native-image-crop-picker';
+
 function SearchBar() {
     const [photo, setPhoto] = useState<String>('');
 
-    function HandleLaunchImage() {
-        launchImageLibrary({mediaType: 'photo'}, data => {
-
-            if(data.didCancel) {
-                return;
-            }
-
-            if(data.errorCode) {
-                return;
-            }
-
-            if(data.uri)
-            setPhoto(data.uri);
-        });
+    function HandleImagePicker() {
+        ImagePicker.openPicker({
+            width: 300,
+            height: 400,
+            cropping: true
+          }).then(image => {
+            console.log(image)
+          });
     };
-
 
     return (
         <SearchBarContainer>
@@ -31,7 +25,7 @@ function SearchBar() {
                 <TextArea></TextArea>
             </TextContainer>
             <IconsContainer>
-                <TouchableIcon onPress={() => HandleLaunchImage()}>
+                <TouchableIcon onPress={() => HandleImagePicker()}>
                     <CameraImage />
                 </TouchableIcon>
                 <TouchableIcon>
@@ -42,4 +36,4 @@ function SearchBar() {
     )
 }
 
-export default SearchBar
+export default SearchBar;
