@@ -1,48 +1,37 @@
 import axios from 'axios';
-import greenLeef from '../assets/images/amoreira.jpg';
-import fs from 'fs'; // File System | Node.js
-import FormData from 'form-data'; // Readable "multipart/form-data" streams
+import FormData from 'form-data';
+import RNFetchBlob from 'react-native-fetch-blob';
 
-const url = 'https://my-api.plantnet.org/v2/identify/all';
-const apiKey = '2a10EX02sybZ3WQCvuH4xz0bJO';
+async function request(photo: any) {
+	const url = 'https://my-api.plantnet.org/v2/identify/all';
+	const apiKey = '2a10EX02sybZ3WQCvuH4xz0bJO';
+	
+	let form = new FormData;
+	form.append('organs', 'leaf');
+	form.append('images', RNFetchBlob.fs.readStream(photo, 'base64'));
 
-let form = new FormData();
-form.append('organs', 'leaf');
-form.append('images', fs.createReadStream(greenLeef));
+	const apiInstance = axios.create({
+		baseURL: `${url}?api-key=${apiKey}&images=${photo}`,
+		headers: form.getHeaders()
+	});
 
-const apiInstance = axios.create({
-	baseURL: `${url}?api-key=${apiKey}&images=${greenLeef}&organs=leef}`,
-	headers: form.getHeaders()
-});
+	const result = await apiInstance.post('/', form)
 
-async function teste() {
-	const result = await apiInstance.post('/');
-	console.log(result);
+	console.log('restult: ', result);
 	return result;
-}
+};
 
-export default teste;
+
+export default request;
 
 
 // ---------------------------
 
-// 'use strict';
-
-// const fs = require('fs'); // File System | Node.js
-// const axios = require('axios'); // HTTP client
-// const FormDataa = require('form-data'); // Readable "multipart/form-data" streams
-
-// const image_1 = '/data/media/image_1.jpeg';
-// const image_2 = '/data/media/image_2.jpeg';
-
-// (async () => {
-// 	let form = new FormDataa();
+// (async (photo) => {
+// 	let form = new FormData();
 
 // 	form.append('organs', 'flower');
-// 	form.append('images', fs.createReadStream(image_1));
-
-// 	form.append('organs', 'leaf');
-// 	form.append('images', fs.createReadStream(image_2));
+// 	form.append('images',  fs.createReadStream(photo));
 
 // 	try {
 // 		const { status, data } = await axios.post(
@@ -53,7 +42,7 @@ export default teste;
 // 		);
 
 // 		console.log('status', status); // should be: 200
-// 		console.log('data', require('util').inspect(data, false, null, true)); // should be: read "Step 6" below
+// 		console.log(data)
 // 	} catch (error) {
 // 		console.error('error', error);
 // 	}
