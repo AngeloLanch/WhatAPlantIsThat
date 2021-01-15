@@ -1,29 +1,24 @@
-import React, {useState, useEffect} from 'react';
-import {Root} from 'native-base';
+import React, {useState, useContext, useEffect} from 'react';
+import {Root, ActionSheet} from 'native-base';
+
 import {SearchBarContainer, TextContainer, TextArea, 
         TouchableIcon, IconsContainer, CameraImage, SearchImage} 
     from './style';
 import {ImageDataType} from '../../types/interface';
-import {ActionSheet} from 'native-base';
 import ImagePicker from 'react-native-image-crop-picker';
-// import request from './../../services/plant-id';
-import request from './../../services/plantnet';
 
-
-export function useTextSearch(): String {
-    const [textSearch, setTextSearch] = useState<String>();
-    
-    const HandleTextSearch = (text: String) => {
-        setTextSearch(text);
-    }
-
-    return ''
-}
-
+import PlantNamesContext from '../../context/plantNamesContext';
 
 function SearchBar() {
     const [photo, setPhoto] = useState<ImageDataType>();
-    const [textSearch, setTextSearch] = useState<String>();
+    const [textSearch, setTextSearch] = useState<string[]>([]);
+    const {requestByPhoto, requestByName, plantNames, plantDetails} = useContext(PlantNamesContext);
+
+    useEffect(() => {
+        if(photo) {
+            HandleSearching()
+        }
+    }, [photo]);
 
     const HandleImagePicker = () => {      
         const BUTTONS = [
@@ -68,27 +63,32 @@ function SearchBar() {
         )
     };
     
-    const HandleTextSearch = (text: String) => {
+    const HandleTextSearch = (text: string[]) => {
         const textLeefSearch = text;
-
         setTextSearch(textLeefSearch);
     };
 
-    const HandleSearchingFor = () => {
-        console.log(request(photo?.path));
+    const HandleSearching = async () => {      
+        if(photo) {
+            await requestByPhoto(photo.path);
+        }
+        
+        if(textSearch) {
+            await requestByName(textSearch);
+        }
     };
 
     return (
         <Root>
             <SearchBarContainer>
                 <TextContainer>
-                    <TextArea onChangeText={(text) => HandleTextSearch(text)}/>
+                    <TextArea onChangeText={(text) => HandleTextSearch([text])}/>
                 </TextContainer>
                 <IconsContainer>
                     <TouchableIcon onPress={() => HandleImagePicker()}>
                         <CameraImage />
                     </TouchableIcon>
-                    <TouchableIcon onPress={() => HandleSearchingFor()}>
+                    <TouchableIcon onPress={() => HandleSearching()}>
                         <SearchImage />
                     </TouchableIcon>
                 </IconsContainer>
